@@ -46,8 +46,8 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("🌱 BEGINNER", key="beginner_btn", use_container_width=True):
-        st.switch_page("pages/1_Beginners_Interface.py")
+        st.switch_page("page/1_Beginners_Interface.py")
 
 with col2:
     if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
-        st.switch_page("pages/2_Regulars_Interface.py")
+        st.switch_page("page/2_Regulars_Interface.py")
