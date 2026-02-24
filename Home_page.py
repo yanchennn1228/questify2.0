@@ -50,4 +50,4 @@ with col1:
 
 with col2:
     if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
-        st.switch_page("page/2_Regulars_Interface.py")
+        st.switch_page("pages/2_Regulars_Interface.py")
