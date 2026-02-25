@@ -104,14 +104,14 @@ st.markdown("""
 
 # ── Workout config ───────────────────────────────────────
 workout_config = {
-    "Push": {
+    "Chest/Shoulder": {
         "colour": "#FF4B4B",
         "hex": "#FF4B4B",
         "emoji": "💪",
         "tip": "Focus on chest, shoulders, and triceps. Warm up your rotator cuffs before heavy pressing.",
         "recommended_zone": "Free Weights "
     },
-    "Pull": {
+    "Back/Bicep": {
         "colour": "#2ECC71",
         "hex": "#2ECC71",
         "emoji": "🏋️",
@@ -125,7 +125,7 @@ workout_config = {
         "tip": "Don't skip the warm-up! Dynamic stretches and light squats before loading up.",
         "recommended_zone": "Squat Racks"
     },
-    "Full Body": {
+    "Cardio": {
         "colour": "#F1C40F",
         "hex": "#F1C40F",
         "emoji": "🔥",
@@ -182,18 +182,18 @@ if not st.session_state.submitted:
     """, unsafe_allow_html=True)
     st.title('Wristband Colour:')    
 workout_colour_map = {
-    "Push": "Red",
-    "Pull": "Green",
+    "Chest/Shoulder": "Red",
+    "Back/Bicep": "Green",
     "Legs": "Blue",
-    "Full Body": "Yellow"
+    "Cardio": "Yellow"
 }
-if workout == "Push":
+if workout == "Chest/Shoulder":
     wristband_colour = workout_colour_map.get(workout, "Red")
-elif workout == "Pull":
+elif workout == "Back/Bicep":
     wristband_colour = workout_colour_map.get(workout, "Green")
 elif workout == "Legs":
     wristband_colour = workout_colour_map.get(workout, "Blue")
-elif workout == "Full Body":
+elif workout == "Cardio":
     wristband_colour = workout_colour_map.get(workout, "Yellow")
     st.markdown("</div>", unsafe_allow_html=True)
 st.markdown(
