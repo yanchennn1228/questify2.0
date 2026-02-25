@@ -50,7 +50,7 @@ taken = load_wristbands()
 
 choice = st.selectbox("Input your wristband number according to the colour allocated:", numbers)
 
-if st.button("✅ Assign Number"):
+if st.button("✅ Confirm"):
     taken = load_wristbands()  # re-read to avoid race conditions
     if choice in taken:
         st.error(f"❌ Number {choice} is already taken! Please choose another.")
