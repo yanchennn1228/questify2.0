@@ -51,3 +51,6 @@ with col1:
 with col2:
     if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
         st.switch_page("pages/2_Regulars_Interface.py")
+
+if st.button("Return Wristband"):
+    st.switch_page("pages/4_Return_Wristband.py")
