@@ -48,7 +48,7 @@ st.title("🎽 Wristband Numbers")
 numbers = list(range(1, 31))
 taken = load_wristbands()
 
-choice = st.selectbox("Select your wristband number:", numbers)
+choice = st.selectbox("Input your wristband number according to the colour allocated:", numbers)
 
 if st.button("✅ Assign Number"):
     taken = load_wristbands()  # re-read to avoid race conditions
