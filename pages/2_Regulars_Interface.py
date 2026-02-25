@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime, timedelta
 
-st.set_page_config(page_title="Beginner Check-In", page_icon="💪", layout="centered")
+st.set_page_config(page_title="bobby", page_icon="🏋️", layout="centered")
 
 st.markdown("""
 <style>
@@ -16,6 +16,7 @@ st.markdown("""
 
     h1, h2, h3 { text-align: center; }
 
+    /* Input fields */
     .stTextInput input, .stSelectbox div[data-baseweb="select"] {
         background-color: rgba(255,255,255,0.08) !important;
         color: white !important;
@@ -23,6 +24,7 @@ st.markdown("""
         border-radius: 10px !important;
     }
 
+    /* Submit button */
     div.stButton > button {
         width: 100%;
         height: 55px;
@@ -41,6 +43,7 @@ st.markdown("""
         box-shadow: 0 0 30px rgba(101, 17, 203, 0.8);
     }
 
+    /* Card style */
     .card {
         background: rgba(255,255,255,0.07);
         border: 1px solid rgba(255,255,255,0.15);
@@ -89,84 +92,85 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# ── Header ──────────────────────────────────────────────
+st.markdown("""
+<div style='text-align:center; padding: 10px 0 5px 0;'>
+    <span style='font-size:60px;'>🏋️</span>
+    <h1 style='margin:0; font-size:36px; background: linear-gradient(to right, #a78bfa, #60a5fa);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>
+        WELCOME REGULARS
+</div>
+""", unsafe_allow_html=True)
+
 # ── Workout config ───────────────────────────────────────
 workout_config = {
     "Push": {
         "colour": "#FF4B4B",
-        "zone": "Free Weights",
+        "hex": "#FF4B4B",
         "emoji": "💪",
-        "tip": "Great choice for beginners! Start with light weights and focus on form. Chest press, shoulder press, and tricep pushdowns are perfect starting points.",
+        "tip": "Focus on chest, shoulders, and triceps. Warm up your rotator cuffs before heavy pressing.",
+        "recommended_zone": "Free Weights "
     },
     "Pull": {
         "colour": "#2ECC71",
-        "zone": "Machines",
+        "hex": "#2ECC71",
         "emoji": "🏋️",
-        "tip": "Machines are ideal for beginners — they guide your movement safely. Try the lat pulldown, seated row, and bicep curl machine.",
+        "tip": "Target your back and biceps. Warm up with band pull-aparts and face pulls.",
+        "recommended_zone": "Machines"
     },
     "Legs": {
         "colour": "#3498DB",
-        "zone": "Squat Racks",
+        "hex": "#3498DB",
         "emoji": "🦵",
-        "tip": "Focus on bodyweight squats first before adding weight. Lunges and leg press are also great beginner-friendly exercises.",
+        "tip": "Don't skip the warm-up! Dynamic stretches and light squats before loading up.",
+        "recommended_zone": "Squat Racks"
     },
     "Full Body": {
         "colour": "#F1C40F",
-        "zone": "Cardio Zone",
+        "hex": "#F1C40F",
         "emoji": "🔥",
-        "tip": "A full body workout is great for building a base! Combine simple compound movements like squats, rows, and presses with some light cardio.",
+        "tip": "Compound movements first — squats, deadlifts, bench. Finish with accessory work.",
+        "recommended_zone": "All Zones"
     },
+   
 }
 
-# ── Header ───────────────────────────────────────────────
-st.markdown("""
-<div style='text-align:center; padding: 10px 0 5px 0;'>
-    <span style='font-size:60px;'>💪</span>
-    <h1 style='margin:0; font-size:36px; background: linear-gradient(to right, #a78bfa, #60a5fa);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>
-        WELCOME BEGINNERS
-    </h1>
-</div>
-""", unsafe_allow_html=True)
-
+# ── Form ─────────────────────────────────────────────────
 if "submitted" not in st.session_state:
     st.session_state.submitted = False
 
 if not st.session_state.submitted:
 
-    # Personal details
-    
     st.markdown("#### 👤 Personal Details")
     col1, col2 = st.columns(2)
     with col1:
-        name = st.text_input("Full Name", placeholder="e.g. Jane Doe")
+        name = st.text_input("Full Name", placeholder="e.g. John Doe")
     with col2:
         gym_id = st.text_input("GYM ID", placeholder="e.g. GYM-1234")
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # Workout details
     st.markdown("#### 🏋️ Workout Details")
-    workout = st.selectbox("Workout Type", list(workout_config.keys()))
-
+    col3, col4 = st.columns(2)
+    with col3:
+        workout = st.selectbox("Workout Type", list(workout_config.keys()))
+    # Live tip based on workout selection
     config = workout_config[workout]
-    gym_zone = config["zone"]
-
-    # Live beginner tip
     st.markdown(f"""
     <div class='tip-box'>
-        {config['emoji']} <strong>Beginner Tip:</strong> {config['tip']}<br><br>
-        📍 <strong>Your Assigned Zone:</strong> {gym_zone}
+        {config['emoji']} <strong>Coach Tip:</strong> {config['tip']}<br>
+        📍 <strong>Recommended Zone:</strong> {config['recommended_zone']}
     </div>
     """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # Timing
     st.markdown("#### ⏱️ Session Timing")
-    col3, col4 = st.columns(2)
-    with col3:
+    col5, col6 = st.columns(2)
+    with col5:
         start_time = st.time_input("Start Time", value=datetime.now().time())
-    with col4:
+    with col6:
         duration = st.slider("Duration (minutes)", 15, 180, 60, step=15)
 
+    # Calculate end time
     start_dt = datetime.combine(datetime.today(), start_time)
     end_dt = start_dt + timedelta(minutes=duration)
     st.markdown(f"""
@@ -176,15 +180,7 @@ if not st.session_state.submitted:
         &nbsp;|&nbsp; ⏳ <strong style='color:white'>{duration} min</strong>
     </p>
     """, unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
-    workout_zone_map = {
-    "Push": "Free Weights",
-    "Pull": "Machines",
-    "Legs": "Squat Racks",
-    "Full Body": "Cardio Zone"
-}
-gym_zone = workout_zone_map[workout]
-st.title('Wristband Colour:')    
+    st.title('Wristband Colour:')    
 workout_colour_map = {
     "Push": "Red",
     "Pull": "Green",
@@ -199,37 +195,21 @@ elif workout == "Legs":
     wristband_colour = workout_colour_map.get(workout, "Blue")
 elif workout == "Full Body":
     wristband_colour = workout_colour_map.get(workout, "Yellow")
-
+    st.markdown("</div>", unsafe_allow_html=True)
 st.markdown(
     f"""
     <div style="
         color:{wristband_colour};
         font-weight:bold;
         font-size:50px;
-        text-align: center
+        text-align:center
     ">
         {wristband_colour}
     </div>
     """,
     unsafe_allow_html=True
 )
-st.markdown(f"""
-<div style="
-    background-color: #1f1f1f;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 0 25px {wristband_colour};
-    border: 2px solid {wristband_colour};
-    transition: 0.3s;
-    width: auto
-">
-    🏢 Assigned Zone: {gym_zone}
-</div>
-""", unsafe_allow_html=True)
+
 
 st.markdown("""
 <style>
@@ -245,13 +225,9 @@ div.stButton > button {
     color: white;
     box-shadow: 0 0 15px rgba(255,255,255,0.15);
     transition: all 0.3s ease;
-}
-
 
 </style>
 """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
 
 if st.button("Submit"):
     if not name or not gym_id:
