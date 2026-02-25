@@ -109,7 +109,7 @@ workout_config = {
         "emoji": "🦵",
         "tip": "Focus on bodyweight squats first before adding weight. Lunges and leg press are also great beginner-friendly exercises.",
     },
-    "Full Body": {
+    "Cardio": {
         "colour": "#F1C40F",
         "zone": "Cardio Zone",
         "emoji": "🔥",
@@ -181,7 +181,7 @@ if not st.session_state.submitted:
     "Chest/Shoulder": "Free Weights",
     "Back/Biceps": "Machines",
     "Legs": "Squat Racks",
-    "Full Body": "Cardio Zone"
+    "Cardio": "Cardio Zone"
 }
 gym_zone = workout_zone_map[workout]
 st.title('Wristband Colour:')    
@@ -189,7 +189,7 @@ workout_colour_map = {
     "Chest/Shoulder": "Red",
     "Back/Biceps": "Green",
     "Legs": "Blue",
-    "Full Body": "Yellow"
+    "Cardio": "Yellow"
 }
 if workout == "Chest/Shoulder":
     wristband_colour = workout_colour_map.get(workout, "Red")
@@ -197,7 +197,7 @@ elif workout == "Back/Biceps":
     wristband_colour = workout_colour_map.get(workout, "Green")
 elif workout == "Legs":
     wristband_colour = workout_colour_map.get(workout, "Blue")
-elif workout == "Full Body":
+elif workout == "Cardio":
     wristband_colour = workout_colour_map.get(workout, "Yellow")
 
 st.markdown(
