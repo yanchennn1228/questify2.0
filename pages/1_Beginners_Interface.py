@@ -91,13 +91,13 @@ st.markdown("""
 
 # ── Workout config ───────────────────────────────────────
 workout_config = {
-    "Push": {
+    "Chest/Shoulder": {
         "colour": "#FF4B4B",
         "zone": "Free Weights",
         "emoji": "💪",
         "tip": "Great choice for beginners! Start with light weights and focus on form. Chest press, shoulder press, and tricep pushdowns are perfect starting points.",
     },
-    "Pull": {
+    "Back/Biceps": {
         "colour": "#2ECC71",
         "zone": "Machines",
         "emoji": "🏋️",
@@ -109,7 +109,7 @@ workout_config = {
         "emoji": "🦵",
         "tip": "Focus on bodyweight squats first before adding weight. Lunges and leg press are also great beginner-friendly exercises.",
     },
-    "Full Body": {
+    "Cardio": {
         "colour": "#F1C40F",
         "zone": "Cardio Zone",
         "emoji": "🔥",
@@ -178,26 +178,26 @@ if not st.session_state.submitted:
     """, unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
     workout_zone_map = {
-    "Push": "Free Weights",
-    "Pull": "Machines",
+    "Chest/Shoulder": "Free Weights",
+    "Back/Biceps": "Machines",
     "Legs": "Squat Racks",
-    "Full Body": "Cardio Zone"
+    "Cardio": "Cardio Zone"
 }
 gym_zone = workout_zone_map[workout]
 st.title('Wristband Colour:')    
 workout_colour_map = {
-    "Push": "Red",
-    "Pull": "Green",
+    "Chest/Shoulder": "Red",
+    "Back/Biceps": "Green",
     "Legs": "Blue",
-    "Full Body": "Yellow"
+    "Cardio": "Yellow"
 }
-if workout == "Push":
+if workout == "Chest/Shoulder":
     wristband_colour = workout_colour_map.get(workout, "Red")
-elif workout == "Pull":
+elif workout == "Back/Biceps":
     wristband_colour = workout_colour_map.get(workout, "Green")
 elif workout == "Legs":
     wristband_colour = workout_colour_map.get(workout, "Blue")
-elif workout == "Full Body":
+elif workout == "Cardio":
     wristband_colour = workout_colour_map.get(workout, "Yellow")
 
 st.markdown(
