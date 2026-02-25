@@ -113,7 +113,7 @@ workout_config = {
         "colour": "#F1C40F",
         "zone": "Cardio Zone",
         "emoji": "🔥",
-        "tip": "A full body workout is great for building a base! Combine simple compound movements like squats, rows, and presses with some light cardio.",
+        "tip": "A cardio workout is great for building a base! Combine simple compound movements like squats, rows, and presses with some light cardio.",
     },
 }
 
