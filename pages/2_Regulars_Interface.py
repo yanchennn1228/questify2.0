@@ -100,7 +100,7 @@ if st.button("Submit"):
     if not name or not gym_id:
         st.error("⚠️ Please fill in your Full Name and GYM ID before submitting.")
     else:
-        st.success(f"✅ Welcome back {name}! Head to **{gym_zone}** and grab your **{wristband_colour}** wristband.")
+        st.switch_page("3_Wristband_Pairing.py")
 
 st.markdown("<br>", unsafe_allow_html=True)
 if st.button("⬅️ Back to Home"):
