@@ -129,7 +129,7 @@ workout_config = {
         "colour": "#F1C40F",
         "hex": "#F1C40F",
         "emoji": "🔥",
-        "tip": "Compound movements first — squats, deadlifts, bench. Finish with accessory work.",
+        "tip": "Stretch first — bicycle, elliptical, stairmaster. Take your pick!",
         "recommended_zone": "All Zones"
     },
    
