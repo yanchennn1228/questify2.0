@@ -163,7 +163,7 @@ if not st.session_state.submitted:
     st.markdown("#### ⏱️ Session Timing")
     col3, col4 = st.columns(2)
     with col3:
-        start_time = st.time_input("Start Time", value=datetime.now().time())
+        start_time = st.time_input("Start Time", key="start_time")
     with col4:
         duration = st.slider("Duration (minutes)", 15, 180, 60, step=15)
 
@@ -262,3 +262,4 @@ if st.button("Submit"):
 st.markdown("<br>", unsafe_allow_html=True)
 if st.button("⬅️ Back to Home"):
     st.switch_page("Home_page.py")
+
