@@ -166,7 +166,7 @@ if not st.session_state.submitted:
     st.markdown("#### ⏱️ Session Timing")
     col5, col6 = st.columns(2)
     with col5:
-        start_time = st.time_input("Start Time", value=datetime.now().time())
+        start_time = st.time_input("Start Time", key="start_time")
     with col6:
         duration = st.slider("Duration (minutes)", 15, 180, 60, step=15)
 
