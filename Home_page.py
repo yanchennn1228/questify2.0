@@ -12,7 +12,7 @@ st.markdown("""
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(to top, #141E30, #243B55);
+        background: linear-gradient(to top, #141E30, #0B5FE8);
         color: white;
     }
     h1, h2, h3 {
@@ -25,8 +25,8 @@ st.markdown("""
         font-weight: 700;
         border-radius: 14px;
         border: none;
-        background-color: #1f1f1f;
-        color: white;
+        background-color: white;
+        color: black;
         box-shadow: 0 0 15px rgba(255,255,255,0.15);
         transition: all 0.3s ease;
     }
@@ -38,7 +38,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("🏋️ Welcome to Questify!")
-st.markdown("<h3 style='text-align:center; color:#aab4c8;'>ActiveSG Gym Check-In</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align:center; color:white;'>ActiveSG Gym Check-In</h3>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 st.write("Please select your user type to proceed:")
 
