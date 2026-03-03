@@ -9,20 +9,11 @@ st.markdown("""
     header {visibility: hidden;}
     footer {visibility: hidden;}
     .block-container {padding-top: 1rem;}
-    * {
-        color: #000000 !important;
+    .stApp {
+        background: linear-gradient(to top, #141E30, #0B5FE8);
+        color: white;
     }
-    </style>
-<style>
-    [data-testid="stAppViewContainer"] {
-        background-color: #f0f2f6 !important;
-    }
-    [data-testid="stMainBlockContainer"] {
-        background-color: white !important;
-        border-radius: 15px !important;
-        padding: 2rem !important;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.1) !important;
-    }
+
 
     h1, h2, h3 { text-align: center; }
 
