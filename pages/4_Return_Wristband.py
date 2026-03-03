@@ -17,8 +17,8 @@ st.markdown("""
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(to top, #141E30, #243B55);
-        color: white;
+    background: linear-gradient(to top, #141E30, #0B5FE8);
+    color: white;
     }
     h1, h2, h3 {
         text-align: center;
