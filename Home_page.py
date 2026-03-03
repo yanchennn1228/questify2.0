@@ -40,7 +40,7 @@ from PIL import Image
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    image = Image.open("gym_logo.png")
+    image = Image.open("gym logo.png")
     st.image(image, use_container_width=True)
 
 st.title("🏋️ Welcome to Questify!")
