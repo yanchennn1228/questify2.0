@@ -10,7 +10,7 @@ st.markdown("""
     .block-container {padding-top: 1rem;}
 
     .stApp {
-        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        background: linear-gradient(to top, #141E30, #0B5FE8);
         color: white;
     }
 

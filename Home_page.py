@@ -52,5 +52,11 @@ with col2:
     if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
         st.switch_page("pages/2_Regulars_Interface.py")
 
+st.markdown("""
+    <style>
+    div.stButton { text-align: center; }
+    </style>
+""", unsafe_allow_html=True)
+
 if st.button("Return Wristband"):
     st.switch_page("pages/4_Return_Wristband.py")
