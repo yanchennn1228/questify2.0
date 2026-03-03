@@ -48,7 +48,7 @@ st.markdown("<h3 style='text-align:center; color:white;'>ActiveSG Gym Check-In</
 st.markdown("<br>", unsafe_allow_html=True)
 st.write("Please select your user type to proceed:")
 
-col1, col2 = st.columns(2)
+col1, col2,col3 = st.columns(3)
 
 with col1:
     if st.button("🌱 BEGINNER", key="beginner_btn", use_container_width=True):
@@ -57,8 +57,6 @@ with col1:
 with col2:
     if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
         st.switch_page("pages/2_Regulars_Interface.py")
-
-col1, col2, col3 = st.columns([1, 1, 1])
-with col2:
+with col3:
     if st.button("Return Wristband"):
         st.switch_page("pages/4_Return_Wristband.py")
