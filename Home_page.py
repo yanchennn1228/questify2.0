@@ -36,8 +36,14 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+import streamlit as st
 
-st.title("🏋️ Welcome to Questify!")
+st.markdown("""
+    <h1 style="font-size: 80px; color: #FFD700; font-style: italic; text-align: center;">
+        🏋️ Questify
+    </h1>
+""", unsafe_allow_html=True)
+
 st.markdown("<h3 style='text-align:center; color:white;'>ActiveSG Gym Check-In</h3>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 st.write("Please select your user type to proceed:")
