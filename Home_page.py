@@ -36,27 +36,18 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-from PIL import Image
-
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    image = Image.open("gym logo.png")
-    st.image(image, use_container_width=True)
 
 st.title("🏋️ Welcome to Questify!")
 st.markdown("<h3 style='text-align:center; color:white;'>ActiveSG Gym Check-In</h3>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 st.write("Please select your user type to proceed:")
 
-col1, col2,col3 = st.columns(3)
 
-with col1:
-    if st.button("🌱 BEGINNER", key="beginner_btn", use_container_width=True):
+
+
+if st.button("🌱 BEGINNER", key="beginner_btn", use_container_width=True):
         st.switch_page("pages/1_Beginners_Interface.py")
-
-with col2:
-    if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
+if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
         st.switch_page("pages/2_Regulars_Interface.py")
-with col3:
-    if st.button("Return Wristband", key="return_btn", use_container_width=True):
+if st.button("Return Wristband", key="return_btn", use_container_width=True):
         st.switch_page("pages/4_Return_Wristband.py")
