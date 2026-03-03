@@ -9,6 +9,10 @@ st.markdown("""
     header {visibility: hidden;}
     footer {visibility: hidden;}
     .block-container {padding-top: 1rem;}
+    * {
+        color: #000000 !important;
+    }
+    </style>
 <style>
     [data-testid="stAppViewContainer"] {
         background-color: #f0f2f6 !important;
