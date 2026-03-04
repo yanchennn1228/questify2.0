@@ -123,7 +123,7 @@ st.markdown("""
 <div style='text-align:center; padding: 10px 0 5px 0;'>
     <span style='font-size:60px;'>💪</span>
     <h1 style='margin:0; font-size:36px; background: linear-gradient(to right, #a78bfa, #60a5fa);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>
+        -webkit-background-clip: text; -webkit-text-fill-color: white;'>
         WELCOME BEGINNERS
     </h1>
 </div>
