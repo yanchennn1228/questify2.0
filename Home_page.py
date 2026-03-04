@@ -46,10 +46,10 @@ st.write("Please select your user type to proceed:")
 
 
 if st.button("🌱 BEGINNER", key="beginner_btn", use_container_width=True):
-        st.switch_page(".streamlit/pages/1_Beginners_Interface.py")
+        st.switch_page("pages/1_Beginners_Interface.py")
 if st.button("🔥 REGULAR", key="regular_btn", use_container_width=True):
-        st.switch_page(".streamlit/pages/2_Regulars_Interface.py")
+        st.switch_page("pages/2_Regulars_Interface.py")
 if st.button("📊 LEADERBOARD", key="leaderboard_btn", use_container_width=True):
-        st.switch_page(".streamlit/pages/Leaderboard.py")
+        st.switch_page("pages/Leaderboard.py")
 if st.button("Return Wristband", key="return_btn", use_container_width=True):
-        st.switch_page(".streamlit/pages/4_Return_Wristband.py")
+        st.switch_page("pages/4_Return_Wristband.py")

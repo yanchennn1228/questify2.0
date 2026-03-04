@@ -233,7 +233,7 @@ if st.button("Submit"):
     if not name or not gym_id:
         st.error("⚠️ Please fill in your Full Name and GYM ID before submitting.")
     else:
-        st.switch_page(".streamlit/pages/3_Wristband_Pairing.py")
+        st.switch_page("pages/3_Wristband_Pairing.py")
 
 st.markdown("<br>", unsafe_allow_html=True)
 if st.button("⬅️ Back to Home"):
