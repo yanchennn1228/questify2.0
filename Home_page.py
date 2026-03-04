@@ -30,10 +30,7 @@ st.markdown("""
         box-shadow: 0 0 15px rgba(255,255,255,0.15);
         transition: all 0.3s ease;
     }
-    div.stButton > button:hover {
-        background-color: #2e2e2e;
-        box-shadow: 0 0 25px rgba(255,255,255,0.3);
-    }
+   
 </style>
 """, unsafe_allow_html=True)
 
