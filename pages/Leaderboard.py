@@ -91,3 +91,6 @@ for _, r in df.sort_values("Rank").head(5).iterrows():
     style = "top1" if r["Rank"]==1 else "top2" if r["Rank"]==2 else "top3" if r["Rank"]==3 else "normal"
     st.markdown(f"<div class='row {style}'>#{r['Rank']} - {r['Name']}  {r['Hours']} hrs |🔥 {r['Streak']} days</div>" , unsafe_allow_html=True)
 
+st.markdown("<br>", unsafe_allow_html=True)
+if st.button("⬅️ Back to Home"):
+    st.switch_page("Home_page.py")
